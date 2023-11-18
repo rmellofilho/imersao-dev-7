@@ -8,67 +8,73 @@ var listaFilmes = [
 
 var listaNomeFilmes = ["John Wick 1", "John Wick 2", "John Wick 3", "John Wick 4", "Matrix"];
 
-var isLoaded = true;
 
 function inicializarCatalogo() {
-var container = document.getElementById("secaoCatalogo");
-container.innerHTML = "";
+  var container = document.getElementById("secaoCatalogo");
+  container.innerHTML = "";
 
-for (var i = 0; i < listaNomeFilmes.length; i++) {
-  var filmeImagemSrc = listaFilmes[i];
-  var tituloFilme = listaNomeFilmes[i];
+  for (var i = 0; i < listaNomeFilmes.length; i++) {
+    var filmeImagemSrc = listaFilmes[i];
+    var tituloFilme = listaNomeFilmes[i];
 
-  var divElement = document.createElement('div');
-  divElement.classList.add('filme-item');
+    var divElement = document.createElement('div');
+    divElement.classList.add('filme-item');
 
-  var imgElement = document.createElement('img');
-  imgElement.src = filmeImagemSrc;
+    var imgElement = document.createElement('img');
+    imgElement.src = filmeImagemSrc;
 
-  var figCaption = document.createElement('figcaption');
-  figCaption.textContent = tituloFilme;
+    var figCaption = document.createElement('figcaption');
+    figCaption.textContent = tituloFilme;
 
-  divElement.appendChild(imgElement);
-  divElement.appendChild(figCaption);
+    divElement.appendChild(imgElement);
+    divElement.appendChild(figCaption);
 
-  container.appendChild(divElement);
-}
-}
-
-function adicionarFilmeCatalogo() {
-let srcImage = document.getElementById("url").value;
-let tituloFilme = document.getElementById("nome").value;
-
-if (!srcImage.endsWith("jpg") && !srcImage.endsWith("jpeg")) {
-  alert("Endereço de imagem inválido. Insira um endereço de imagem válido no formato jpg ou jpeg.");
-  return;
+    container.appendChild(divElement);
+  }
 }
 
 
-if (listaNomeFilmes.includes(tituloFilme)) {
-  alert("Este filme já foi adicionado à lista.");
-  return;
-}
-
-listaNomeFilmes.push(tituloFilme);
-listaFilmes.push(srcImage);
-
-document.getElementById("url").value = "";
-document.getElementById("nome").value = "";
-
-adicionarParaCatalogo(); // Adiciona o filme ao catálogo
-}
-
+// inicializar o catálogo da lista
 document.addEventListener("DOMContentLoaded", function() {
 inicializarCatalogo(); // Preenche o catálogo inicial
 });
 
+
+function adicionarParaCatalogo() {
+  var container = document.getElementById("secaoCatalogo");
+  container.innerHTML = "";
+  inicializarCatalogo();
+}
+
+
+function adicionarFilmeCatalogo() {
+  let srcImage = document.getElementById("url").value;
+  let tituloFilme = document.getElementById("nome").value;
+
+  if (!srcImage.endsWith("jpg") && !srcImage.endsWith("jpeg")) {
+    alert("Endereço de imagem inválido. Insira um endereço de imagem válido no formato jpg ou jpeg.");
+    return;
+  }
+
+  if (listaNomeFilmes.includes(tituloFilme)) {
+    alert("Este filme já foi adicionado à lista.");
+    return;
+  }
+
+  listaNomeFilmes.push(tituloFilme);
+  listaFilmes.push(srcImage);
+
+  document.getElementById("url").value = "";
+  document.getElementById("nome").value = "";
+
+  adicionarParaCatalogo(); // Adiciona o filme ao catálogo
+}
+
+
+//Aciona o adicionar 
 document.getElementById("formFilme").addEventListener("submit", function(event) {
 event.preventDefault();
 adicionarFilmeCatalogo();
 });
 
-function adicionarParaCatalogo() {
-var container = document.getElementById("secaoCatalogo");
-container.innerHTML = "";
-inicializarCatalogo();
-}
+
