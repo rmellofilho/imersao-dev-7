@@ -1,4 +1,4 @@
-# Projetos da Imersão Dev - Alura
+# Projetos da Imersão Dev 7 - Alura
 
 Este repositório contém uma série de cinco projetos desenvolvidos durante a Imersão Dev da Alura. Cada parte representa um projeto específico e demonstra diferentes aspectos do desenvolvimento web com JavaScript, HTML e CSS.
 
