@@ -1,0 +1,63 @@
+body {
+  font-family: "Roboto Mono", monospace;
+  text-align: center;
+  background-image: url("https://img.freepik.com/free-photo/assortment-cinema-elements-red-background-with-copy-space_23-2148457848.jpg?w=1380&t=st=1700252641~exp=1700253241~hmac=4954529dbfb9eea428cb7794a418906ccd16ae4cebfe502a67891e6b56b5a7a5");
+  background-color: #000000;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+}
+
+.page-title {
+  color: #ffffff;
+  margin: 0 0 5px;
+}
+
+.page-subtitle {
+  color: #ffffff;
+  margin-top: 5px;
+}
+
+.page-logo {
+  width: 200px;
+}
+
+.alura-logo {
+  width: 40px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+body > img {
+  margin: 0 10px;
+}
+
+img {
+  max-height: 250px;
+}
+
+.secao{
+  display: block;
+}
+
+.secao-catalogo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filme-item {
+  width: 250px;
+  margin: 10px;
+  text-align: center;
+}
+
+figcaption{
+  color: #fff;
+}

@@ -33,11 +33,12 @@ function inicializarCatalogo() {
   }
 }
 
-
 // inicializar o catálogo da lista
 document.addEventListener("DOMContentLoaded", function() {
 inicializarCatalogo(); // Preenche o catálogo inicial
 });
+
+
 
 
 function adicionarParaCatalogo() {
@@ -45,7 +46,6 @@ function adicionarParaCatalogo() {
   container.innerHTML = "";
   inicializarCatalogo();
 }
-
 
 function adicionarFilmeCatalogo() {
   let srcImage = document.getElementById("url").value;
@@ -55,6 +55,7 @@ function adicionarFilmeCatalogo() {
     alert("Endereço de imagem inválido. Insira um endereço de imagem válido no formato jpg ou jpeg.");
     return;
   }
+
 
   if (listaNomeFilmes.includes(tituloFilme)) {
     alert("Este filme já foi adicionado à lista.");
@@ -71,7 +72,7 @@ function adicionarFilmeCatalogo() {
 }
 
 
-//Aciona o adicionar 
+//
 document.getElementById("formFilme").addEventListener("submit", function(event) {
 event.preventDefault();
 adicionarFilmeCatalogo();
